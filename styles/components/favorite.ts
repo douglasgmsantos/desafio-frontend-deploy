@@ -12,6 +12,14 @@ export const Container = styled.div`
   justify-content:center;
   align-items:center;
 
+  @media (max-width: 540px) {
+    margin: ${p => p.theme.spacing.default};
+
+    div {
+      text-align: center;
+    }
+  }
+
   height: 100vh;
 
   div a{

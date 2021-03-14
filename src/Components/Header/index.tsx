@@ -49,7 +49,7 @@ const Header = () => {
         {pages.map((page: IListPage) => {
           return (
             <Link key={page.label} href={page.router} >
-              <Li active={router.pathname === page.router}>
+              <Li active={router.pathname === page.router} onClick={() => openMenu()}>
                 <IconContainer>
                   {page.label}
                 </IconContainer>
