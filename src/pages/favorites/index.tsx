@@ -7,7 +7,7 @@ import List from '../../Components/List';
 import { useFavorite } from '../../hooks/useFavorite';
 import { useOrderBy } from '../../hooks/useOrderBy';
 
-import { Container, ListContainer } from './styles';
+import { Container, ListContainer } from '../../../styles/components/favorite';
 
 const Favorites = () => {
   const { favorites } = useFavorite();

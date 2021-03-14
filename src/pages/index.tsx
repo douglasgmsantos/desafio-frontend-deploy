@@ -5,7 +5,7 @@ import { useFavorite } from '../hooks/useFavorite';
 
 import List from '../Components/List';
 
-import { Container } from './styles';
+import { Container } from '../../styles/components/home';
 
 const Home: React.FC = () => {
   const { favorites } = useFavorite();
