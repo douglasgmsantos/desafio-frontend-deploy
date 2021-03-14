@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Switch from "react-switch";
@@ -11,6 +11,7 @@ import { useTheme } from '../../hooks/theme';
 import { useOrderBy } from '../../hooks/useOrderBy';
 
 import { Select, Container, Li, PagesContainer, SwitchContainer, IconContainer, ListMenuIcon } from './styles';
+import { Notifyer } from '../../utils/Notifyer';
 
 
 interface IListPage {
@@ -24,6 +25,14 @@ const Header = () => {
   const { orderByOption, orderByStock, changeOrderBY } = useOrderBy();
   const { toggleTheme, theme } = useTheme();
   const [activeMenu, setActiveMenu] = useState(false);
+
+  const startNotify = useCallback(async() => {
+    await Notifyer.init();
+  }, []);
+
+  useEffect( () => {
+    startNotify()
+  }, [])
 
   const openMenu = useCallback(() => {
     setActiveMenu(!Boolean(activeMenu))

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+import { Notifyer } from '../utils/Notifyer';
 import Cookies from 'js-cookie';
 
 
@@ -52,7 +53,9 @@ const FavoriteProvider: React.FC = ({ children }) => {
     }
 
     setFavorites(newFavorites);
-    Cookies.set("@douglasgmsantos:favorites", JSON.stringify(newFavorites))
+    Cookies.set("@douglasgmsantos:favorites", JSON.stringify(newFavorites));
+
+    Notifyer.notify({ title: "Atenção", body: "Lista de favoritos atualizado." })
   }
 
 
